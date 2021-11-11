@@ -1,0 +1,7 @@
+{
+  "name": "blackjackTS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

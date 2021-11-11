@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "blackjackTS",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
