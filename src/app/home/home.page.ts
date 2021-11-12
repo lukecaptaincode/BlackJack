@@ -11,6 +11,7 @@ export class HomePage {
 
   start(){
     this.blackJack = new Blackjack();
+    console.log(this.blackJack);
   }
 
   hit(){

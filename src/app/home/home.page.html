@@ -14,6 +14,6 @@
   </ion-header>
 
   <div id="container">
-    <ion-button>Start</ion-button>
+    <ion-button *ngIf="blackJack.gameInfo.isOver || !blackJack.gameInfo.isOver === undefined" (click)="start()">Start</ion-button>
   </div>
 </ion-content>
