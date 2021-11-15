@@ -1,27 +1,25 @@
 import { Component } from '@angular/core';
-import { Blackjack } from '../classes/BlackJack';
+import { Blackjack } from '../core/blackJack';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  blackJack: Blackjack;
-  constructor() {}
+  public blackJack: Blackjack;
+  constructor() {
+    this.start();
+  }
 
-  start(){
+  start() {
     this.blackJack = new Blackjack();
-    console.log(this.blackJack);
   }
 
-  hit(){
+  hit() {
     this.blackJack.hit(this.blackJack.player);
-    this.blackJack.handCheck(this.blackJack.player);
   }
 
-  stand(){
+  stand() {
     this.blackJack.stand();
-    this.blackJack.handCheck(this.blackJack.dealer);
   }
-
 }

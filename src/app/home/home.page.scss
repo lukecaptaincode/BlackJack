@@ -1,18 +1,20 @@
+$card-colour: rgb(241, 232, 213);
+$outlined-text: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+  1px 1px 0 #000; //Outline for visibility
+$game-mat-green: #4aad4a;
 #container {
   text-align: center;
-
+  height: 90%;
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
-
 #container strong {
   font-size: 20px;
   line-height: 26px;
 }
-
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -24,4 +26,112 @@
 
 #container a {
   text-decoration: none;
+}
+
+.hands {
+  height: 95%;
+  ion-grid {
+    background-color: $game-mat-green;
+    height: 50%;
+    width: 100%;
+    &:nth-of-type(1) {
+      margin-bottom: 2%;
+    }
+    ion-row:nth-of-type(1) {
+      h4 {
+        font-size: 2rem !important;
+        text-shadow: $outlined-text;
+      }
+      height: 20%;
+    }
+    ion-row:nth-of-type(2) {
+      height: 80%;
+    }
+    .card {
+      box-shadow: 0 5px 10px rgb(0 0 0 / 0.7);
+      animation: draw 1.4s forwards;
+      &.player:nth-of-type(2) {
+        // Make second card invisible and delay animation, for player
+        visibility: hidden;
+        animation-delay: 0.5s;
+      }
+      width: 10%;
+      height: 80%;
+      position: relative;
+      background-color: $card-colour;
+      p {
+        font-size: 2rem !important;
+      }
+      &.♠,
+      &.♣ {
+        p {
+          color: black !important;
+        }
+      }
+      &.♥,
+      &.♦ {
+        p {
+          color: red !important;
+        }
+      }
+      span:nth-of-type(1) {
+        position: absolute;
+        top: 3%;
+        left: 3%;
+      }
+      span:nth-of-type(2) {
+        position: absolute;
+        bottom: 3%;
+        right: 3%;
+      }
+    }
+  }
+}
+.mask {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.gameover {
+  box-shadow: 0 5px 10px rgb(0 0 0 / 0.7);
+  animation: draw 1.4s forwards;
+  width: max-content;
+  height: max-content;
+  padding: 2%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $game-mat-green;
+  z-index: 12;
+  p {
+    font-size: 3rem !important;
+    color: white !important;
+    text-shadow: $outlined-text;
+  }
+  ion-button {
+    margin-top: 5%;
+  }
+}
+
+@keyframes draw {
+  0% {
+    transform: rotate3d(0, 0, 1, 15deg) translate3d(0, -100vh, 0);
+  }
+  30% {
+    transform: rotate3d(0, 0, 0, 0deg) translate3d(0, 0, 0);
+  }
+  65% {
+    transform: rotate3d(0, 0, 0, 0deg) translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+  100% {
+    visibility: inherit; // Keeps second card visible
+  }
 }
