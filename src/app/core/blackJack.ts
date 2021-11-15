@@ -44,7 +44,7 @@ export class Blackjack {
         }
       }).reduce((a, b) => a + b, 0);
       if (score > 21 && player.hand.some(card => card.rank === 'A') ) {  //Make Aces low
-          score -= (player.hand.find(c => c === 'A').length * 10);
+          score -= player.hand.filter(a => a.rank === 'A').length * 10;
       }
       return score;
   }

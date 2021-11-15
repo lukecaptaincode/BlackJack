@@ -56,7 +56,7 @@ describe('BlackJack', () => {
       expect(blackJack.getHandValue(blackJack.player)).to.equal(20);
     });
     it('should return correct value for two Ace Low', () => {
-      blackJack.player.hand = [aceHearts, aceHearts];
+      blackJack.player.hand = [aceHearts, aceSpades];
       expect(blackJack.getHandValue(blackJack.player)).to.equal(2);
     });
   });
