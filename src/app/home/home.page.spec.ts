@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { browser, element, ExpectedConditions, by } from 'protractor';
 
 import { HomePage } from './home.page';
 

@@ -2,9 +2,9 @@
   <ion-toolbar>
     <ion-title> ♠ Black Jack </ion-title>
     <ion-buttons slot="end">
-      <ion-button color="primary" (click)="start()">Reset</ion-button>
-      <ion-button color="success"(click)="hit()" *ngIf="!blackJack.gameInfo.isOver">Hit</ion-button>
-      <ion-button color="danger" (click)="stand()" *ngIf="!blackJack.gameInfo.isOver">Stand</ion-button
+      <ion-button color="primary" (click)="start()" id="reset-btn">Reset</ion-button>
+      <ion-button color="success"(click)="hit()" *ngIf="!blackJack.gameInfo.isOver" id="hit-btn">Hit</ion-button>
+      <ion-button color="danger" (click)="stand()" *ngIf="!blackJack.gameInfo.isOver" id="stand-btn">Stand</ion-button
       >
     </ion-buttons>
   </ion-toolbar>
